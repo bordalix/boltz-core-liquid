@@ -12,12 +12,13 @@ import {
   TransactionOutput,
 } from './consts/Types';
 import { init } from './init';
+import { constructClaimTransaction } from './liquid/swap/Claim';
+import { constructRefundTransaction } from './liquid/swap/Refund';
+import reverseSwapTree from './liquid/swap/ReverseSwapTree';
 import Musig from './musig/Musig';
-import { constructClaimTransaction } from './swap/Claim';
 import { detectPreimage } from './swap/PreimageDetector';
-import { constructRefundTransaction } from './swap/Refund';
 import reverseSwapScript from './swap/ReverseSwapScript';
-import reverseSwapTree, {
+import {
   extractClaimPublicKeyFromReverseSwapTree,
   extractRefundPublicKeyFromReverseSwapTree,
 } from './swap/ReverseSwapTree';
